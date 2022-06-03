@@ -48,7 +48,7 @@ DashboardSidebar.propTypes = {
 function DashboardSidebar(props, { isOpenSidebar, onCloseSidebar }) {
   const { pathname } = useLocation();
 
-  const { user, id, photoURL } = useSelector((state) => state.user);
+  const { user, id, photoURL, role } = useSelector((state) => state.user);
 
   const isDesktop = useResponsive('up', 'lg');
   var filteredNavConfig;
@@ -89,7 +89,7 @@ function DashboardSidebar(props, { isOpenSidebar, onCloseSidebar }) {
                 {user}
               </Typography>
               <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                {account.role}
+                {role}
               </Typography>
             </Box>
           </AccountStyle>
